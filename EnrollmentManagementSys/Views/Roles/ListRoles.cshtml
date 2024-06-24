@@ -1,0 +1,50 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@model IEnumerable<IdentityRole>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <h2 class="text-primary">Role List</h2>
+        </div>
+        <div class="col-6 text-right">
+            <a asp-controller="Roles" asp-action="CreateRole" class="btn btn-primary">
+                <i class="bi bi-plus-circle"></i>+ Role
+            </a>
+        </div>
+    </div>
+    <br />
+
+    @foreach (var role in Model)
+    {
+        <div class="card mb-3">
+
+
+
+            <div class="card card-primary">
+                <div class="card-header">
+                    <h3 class="card-title">Role Id: <b>@role.Id</b> </h3>
+                </div>
+                <!-- /.card-header -->
+                <!-- form start -->
+
+                <div class="card-body">
+                    <h5 class="card-title">@role.Name</h5>
+                </div>
+                <!-- /.card-body -->
+
+                <div class="card-footer">
+                    <a asp-action="EditRole" asp-route-id="@role.Id" class="btn btn-primary mx-2"><i class="bi bi-pencil-square">Edit or Add User</i></a>
+                    @*<a asp-action="Delete" asp-route-id="" class="btn btn-danger mx-2"><i class="bi bi-trash-fill"></i></a>*@
+                </div>
+
+            </div>
+        </div>
+    }
+
+
+
+</div>

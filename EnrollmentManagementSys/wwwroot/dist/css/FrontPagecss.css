@@ -1,0 +1,71 @@
+body {
+    /*background-image: url("dist/img/BackGround.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-size: cover;
+    background-attachment: fixed;*/
+    background-image: url("../dist/img/dmcbackground2.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+h1 {
+    font-size: 50px;
+    text-align: center;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.picture {
+    margin-bottom: 20px; /* Optional: Add some space below the image */
+}
+
+.picture img {
+        max-width: 100%; /* Ensure the image doesn't exceed its container's width */
+ }
+
+.button {
+    background-color: #23941b;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #0f254a;
+}
+
+.button:hover {
+    color: black;
+    background-color: #4eff42
+}
+
+    .button:active {
+        background-color: #23941b;
+        box-shadow: 0 5px #0f254a;
+        transform: translateY(4px);
+    }
+
+  .artlink {
+    align-items: center;
+  }
+
+  .picture {
+    size: 5px;
+  }
+
+  .content h3 {
+      color:forestgreen;
+  }
+
+

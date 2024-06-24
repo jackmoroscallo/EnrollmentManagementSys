@@ -1,0 +1,68 @@
+﻿@model IEnumerable<EnrollmentManagementSys.Models.StudentSubject>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<h1>Subject List</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-success"><i class="bi bi-patch-plus"></i> &nbsp;Create New</a>
+</p>
+<table id="dataTable" class="table table-bordered table-striped " style="width:100%">
+    <thead>
+        <tr>
+            <th>
+                Course Code
+            </th>
+            <th>
+                Subject Code
+            </th>
+            <th>
+                Subject Description
+            </th>
+            <th>
+                Units
+            </th>
+            <th>
+                Subject Type
+            </th>
+            <th>
+                Subject Hours
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                    @Html.DisplayFor(modelItem => item.StudentCourse.CourseName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SubjectCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SubjectDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Units)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StudentSubjectType.TypeName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SubjectHours)
+            </td>
+            <td>
+                    <a asp-action="Edit" asp-route-id="@item.SubjectId" class="btn btn-warning"><i class="bi bi-pencil-square"></i> Edit</a><br>
+                    <a asp-action="Details" asp-route-id="@item.SubjectId" class="btn btn-info"><i class="bi bi-info-circle"></i> Details</a><br>
+                    <a asp-action="Delete" asp-route-id="@item.SubjectId" class="btn btn-danger"><i class="bi bi-trash3"></i> Delete</a>
+
+                    @* <a asp-controller="Edit" asp-action="" asp-route-id="@item.SubjectId" class="btn btn-secondary">Create Subject Schedule</a> *@
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

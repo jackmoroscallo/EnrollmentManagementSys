@@ -1,0 +1,57 @@
+﻿@model EnrollmentManagementSys.Models.Enrollment
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Enrollment</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="RecordID" class="control-label">Student</label>
+                <select asp-for="RecordID" class="form-control select2" asp-items="ViewBag.RecordID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="StudentCourseID" class="control-label">Course</label>
+                <select asp-for="StudentCourseID" class ="form-control" asp-items="ViewBag.StudentCourseID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="YearLevelID" class="control-label">Year Level</label>
+                <select asp-for="YearLevelID" class ="form-control" asp-items="ViewBag.YearLevelID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="SchoolYearID" class="control-label">School Year</label>
+                <select asp-for="SchoolYearID" class ="form-control" asp-items="ViewBag.SchoolYearID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="TermID" class="control-label">Term</label>
+                <select asp-for="TermID" class ="form-control" asp-items="ViewBag.TermID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="EnrollmentDate" class="control-label">Enrollment Date</label>
+                <input asp-for="EnrollmentDate" class="form-control" />
+                <span asp-validation-for="EnrollmentDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EnrollmentStatusID" class="control-label">Enrollment Status</label>
+                <select asp-for="EnrollmentStatusID" class ="form-control" asp-items="ViewBag.EnrollmentStatusID"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,26 @@
+﻿@model EnrollmentManagementSys.Models.ModelViews.RoleView
+<div class="container">
+    <div class="row">
+        <h2 class="text-primary">Create Role</h2>
+        <hr />
+    </div>
+
+    <form method="post">
+
+        <hr />
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <div class="mb-3">
+            <input asp-for="RoleName" class="form-control" autocomplete="FirstName" aria-required="true" />
+            <label asp-for="RoleName"></label>
+            <span asp-validation-for="RoleName" class="text-danger"></span>
+        </div>
+
+        <button id="registerSubmit" type="submit" class="btn btn-primary" style="width:150px">Create</button>
+    </form>
+
+
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

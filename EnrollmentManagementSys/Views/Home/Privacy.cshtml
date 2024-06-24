@@ -1,0 +1,145 @@
+﻿@{
+    ViewData["Title"] = "Enrollment System Menu";
+}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="~/dist/css/FrontPagecss.css">
+<link rel="stylesheet" href="~/dist/css/adminlte.min.css">
+<link rel="stylesheet" href="~/css/StyleSheet.css">
+
+
+<style>
+.artlink {
+        text-align: center;
+}
+
+body {
+    background-image: url("..dist/img/dmcbackground.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    }
+
+</style>
+
+<div class="content">
+
+
+    <h1 class="display-4"><b>DMC Enrollment System Menu</b></h1>
+
+    <div class="choices">
+        @if (User.IsInRole("Admin") || User.IsInRole("Registrar"))
+        {
+            <a asp-controller="Students" asp-action="Index">
+                <div class="choice" id="p">
+                    <a asp-controller="Students" asp-action="Index">
+                        <img src="~/dist/img/studentlogo3.png" alt="" />
+                    </a>
+                    <p><b>Student List</b></p>
+                </div>
+            </a>
+            <a asp-controller="Courses" asp-action="Index"> <div class="choice" id="p">
+                    <a asp-controller="Courses" asp-action="Index">
+                        <img src="~/dist/img/courselogo2.png" alt="" />
+                    </a>
+                    <p><b>Course List</b></p>
+                </div></a>
+            <a asp-controller="StudentSubjects" asp-action="Index">
+                <div class="choice" id="p">
+                <a asp-controller="StudentSubjects" asp-action="Index">
+                    <img src="~/dist/img/subjectlogo2.png" alt="" />
+                </a>
+                <p><b>Subject List</b></p>
+            </div>
+        </a>
+        }
+        @if (User.IsInRole("Admin") || User.IsInRole("Accounting"))
+        {
+        <a asp-controller="Fees" asp-action="Index">
+            <div class="choice" id="p">
+                <a asp-controller="Fees" asp-action="Index" class="nav-link">
+                    <img src="~/dist/img/feelogo2.png" alt="" />
+                </a>
+                <p><b>Fee List</b></p>
+            </div>
+        </a>
+            <a asp-controller="StudentPayments" asp-action="Index">
+                <div class="choice" id="p">
+                    <a asp-controller="StudentPayments" asp-action="Index">
+                        <img src="~/dist/img/studentpaymentlogo.png" alt="" />
+                    </a>
+                    <p><b>Student Payment</b></p>
+                </div>
+            </a>
+
+            
+        }
+    </div>
+         @if (User.IsInRole("Admin"))
+        {
+        <div class="choices">
+            <a asp-controller="Rooms" asp-action="Index">
+                <div class="choice" id="p">
+                    <a asp-controller="Rooms" asp-action="Index">
+                        <img src="~/dist/img/RoomLogo.png" alt="" />
+                    </a>
+                    <p><b>Room</b></p>
+                </div>
+            </a>
+
+            <a asp-controller="Sections" asp-action="Index">
+                <div class="choice" id="p">
+                    <a asp-controller="Sections" asp-action="Index">
+                        <img src="~/dist/img/SectionLogo.png" alt="" />
+                    </a>
+                    <p><b>Section</b></p>
+                </div>
+            </a>
+
+            <a asp-controller="OfferedSubjects" asp-action="Index">
+                <div class="choice" id="p">
+                    <a asp-controller="OfferedSubjects" asp-action="Index">
+                        <img src="~/dist/img/OfferedSubject.png" alt="" />
+                    </a>
+                    <p><b>Offered Subjects</b></p>
+                </div>
+            </a>
+
+            <a asp-controller="SubjectSchedules" asp-action="Index">
+                <div class="choice" id="p">
+                    <a asp-controller="SubjectSchedules" asp-action="Index">
+                        <img src="~/dist/img/subjectschedulelogo.png" alt="" />
+                    </a>
+                    <p><b>Subject Schedules</b></p>
+                </div>
+            </a>
+
+            <a asp-controller="Enrollments" asp-action="Index">
+                <div class="choice" id="p">
+                    <a asp-controller="Enrollments" asp-action="Index">
+                        <img src="~/dist/img/enrollstudentlogo.png" alt="" />
+                    </a>
+                    <p><b>Enroll Student</b></p>
+                </div>
+            </a>
+
+        </div>
+        }
+    @* <p>
+    <a asp-controller="BoardingHouses" asp-action="Index" class="btn btn-primary">
+    <i class="bi bi-patch-plus"></i> &nbsp; Browse Boarding House
+    </a>
+    </p>*@
+
+</div>
+
+<div class="artlink">
+
+    
+</div>
+<!-- Bootstrap JS and jQuery (required for the carousel functionality) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!--<script src="~/dist/js/Browsehotel.js"></script>--!>
+
+
